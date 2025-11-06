@@ -106,7 +106,7 @@ public class ProductDB {
     // クラスロード時に一度だけ実行される初期化ブロック
     static {
         try {
-        	// MySQLドライバを明示ロード（保険）
+        	// MySQLドライバを明示ロード
             Class.forName("com.mysql.cj.jdbc.Driver"); 
         } catch (ClassNotFoundException e) {
         	// ドライバが見つからないと何も始まらないので、即座に実行中断
