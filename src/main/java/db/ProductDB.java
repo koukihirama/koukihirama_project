@@ -32,7 +32,7 @@ public class ProductDB {
         } catch (SQLException e) {
         	// 失敗時のメッセージ
             System.out.println("DB接続失敗");
-            // どこで何が失敗したか原因を出力（デバッグ用）
+            // どこで何が失敗したか原因を出力
             e.printStackTrace();
         }
     }
