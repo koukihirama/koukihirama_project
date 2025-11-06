@@ -56,7 +56,7 @@ public class ProductDB {
             boolean any = false;
             // 結果セットを1行ずつ前に進める（行があればtrue）
             while (rs.next()) {
-            	// 1行でも来たので true にする
+            	// 1行でも来たのでtrueにする
                 any = true;
 
                 // カラム名で値を取り出す（int）
