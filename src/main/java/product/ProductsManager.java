@@ -24,8 +24,13 @@ public class ProductsManager implements Searchable {
     }
 
     public Product getProductByName(String name) {
+        if (name == null || name.isBlank()) return null;
+        String key = name.trim().toLowerCase();
         for (Product p : products) {
-            if (p.getName().equals(name)) return p;
+            String n = p.getName();
+            if (n != null && n.trim().toLowerCase().equals(key)) { 
+                return p;
+            }
         }
         return null;
     }
