@@ -1,7 +1,7 @@
 // このクラスは「db」パッケージに所属する
 package db;
 
-//DB接続を表すオブジェクト（接続そのもの）
+//DB接続を表すオブジェクト
 import java.sql.Connection;
 //接続を作るためのユーティリティ（URL/USER/PASSでConnectionを作る）
 import java.sql.DriverManager;
