@@ -25,7 +25,7 @@ public class ProductDB {
 
 	// パート1：接続テスト用のメソッド
     public static void testConnection() {
-    	// URL/USER/PASSでDBへ接続を試みる。try-with-resourcesなので自動でcloseされる
+    	// URL/USER/PASSでDBへ接続を試みる。try-with-resourcesなので自動でclose
         try (Connection con = DriverManager.getConnection(URL, USER, PASS)) {
         	// 接続できたら成功メッセージ
             System.out.println("DB接続成功");
