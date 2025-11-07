@@ -15,7 +15,7 @@ import java.sql.SQLException;
 // DBアクセス専用のユーティリティクラス
 public class ProductDB {
 
-	 // JDBC接続文字列。どこのDBへ繋ぐか、各種オプション（SSL無効/タイムゾーン等）もここで指定
+	 // JDBC接続文字列。どこのDBへ繋ぐか、各種オプションもここで指定
 	private static final String URL =
 		    "jdbc:mysql://127.0.0.1:3306/java_basic?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo";
 	    // DBにログインするユーザ名
