@@ -1,1 +1,17 @@
-/build/
+# Eclipse / IDE
+.classpath
+.project
+.settings/
+Servers/
+
+# Build artifacts
+build/
+bin/
+target/
+
+# OS
+.DS_Store
+
+# (Maven/Gradle使うなら)
+.mvn/
+.gradle/
