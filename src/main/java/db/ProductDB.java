@@ -1,7 +1,7 @@
 // このクラスは「db」パッケージに所属する
 package db;
 
-//DB接続を表すオブジェクト
+//DB接続を表すオブジェクト（接続そのもの）
 import java.sql.Connection;
 //接続を作るためのユーティリティ（URL/USER/PASSでConnectionを作る）
 import java.sql.DriverManager;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
 // DBアクセス専用のユーティリティクラス
 public class ProductDB {
 
-	 // JDBC接続文字列。どこのDBへ繋ぐか、各種オプションもここで指定
+	 // JDBC接続文字列。どこのDBへ繋ぐか、各種オプション（SSL無効/タイムゾーン等）もここで指定
 	private static final String URL =
 		    "jdbc:mysql://127.0.0.1:3306/java_basic?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo";
 	    // DBにログインするユーザ名
@@ -56,7 +56,7 @@ public class ProductDB {
             boolean any = false;
             // 結果セットを1行ずつ前に進める（行があればtrue）
             while (rs.next()) {
-            	// 1行でも来たのでtrueにする
+            	// 1行でも来たので true にする
                 any = true;
 
                 // カラム名で値を取り出す（int）

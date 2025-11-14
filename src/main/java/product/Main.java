@@ -196,11 +196,15 @@ public class Main {
     }
 
     private static int readInt(String prompt) {
+    	//永遠ループで入力を受け続ける。正しい数値が来たら return で抜ける
         while (true) {
+        	//プロンプトを改行なしで表示。
             System.out.print(prompt);
             try {
+            	//入力を1行まるごと文字列で取得し、前後の空白を削る。
                 return Integer.parseInt(sc.nextLine().trim());
-            } catch (NumberFormatException e) {   // ← これだけで十分
+            //文字→数値変換に失敗した時だけ捕まえる。
+            } catch (NumberFormatException e) {  
                 System.out.println("数値を入力してください。");
             }
         }
