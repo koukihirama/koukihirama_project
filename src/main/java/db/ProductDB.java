@@ -11,7 +11,7 @@ import java.util.Scanner;             // コンソール入力用
 
 public class ProductDB {
 
-    // ====== 接続設定 ======
+    // 接続設定
     private static final String URL =
         // 接続先のJDBC URL（DB: product_management / 文字コードやタイムゾーンを指定）
         "jdbc:mysql://127.0.0.1:3306/product_management?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo";
@@ -23,7 +23,7 @@ public class ProductDB {
         return DriverManager.getConnection(URL, USER, PASS);
     }
 
-    // ====== 1) 接続テスト ======
+    // 接続テスト 
     public static void testConnection() {
         // try-with-resources：処理が終わると自動的にcon.close()してくれる
         try (Connection con = getConnection()) {
@@ -34,7 +34,7 @@ public class ProductDB {
         }
     }
 
-    // ====== 2) 一覧表示 ======
+    // 一覧表示
     public static void printAllProducts() {
         System.out.println("ーーproductsテーブルの全ての商品情報を表示ーー");
 
@@ -73,7 +73,7 @@ public class ProductDB {
         }
     }
 
-    // ====== 3) 追加 ======
+    // 追加 
     public static int insertProduct(String name, int price, int stock, Integer categoryId) {
         // idはAUTO_INCREMENTなのでINSERT対象に含めない
         final String sql =
@@ -100,7 +100,7 @@ public class ProductDB {
         }
     }
 
-    // ====== 4) 更新（価格・在庫） ======
+    // 更新（価格・在庫） 
     public static int updatePriceAndStock(int id, int newPrice, int newStock) {
         // 指定idの行のpriceとstockを上書き
         final String sql = "UPDATE products SET price = ?, stock = ? WHERE id = ?";
@@ -120,7 +120,7 @@ public class ProductDB {
         }
     }
 
-    // ====== 5) 削除（カテゴリIDで一括） ======
+    // 削除
     public static int deleteByCategoryId(int categoryId) {
         final String sql = "DELETE FROM products WHERE category_id = ?";
 
@@ -136,7 +136,7 @@ public class ProductDB {
         }
     }
 
-    // ====== 6) 入力ユーティリティ ======
+    // 入力ユーティリティ 
     // 数値を安全に読む（数字でない場合は再入力を促す）
     private static int readInt(Scanner sc, String prompt) {
         while (true) {
@@ -169,7 +169,7 @@ public class ProductDB {
         return sc.nextLine();
     }
 
-    // ====== 7) メニュー（スクショの文言に合わせて表示） ======
+    // メニュー
     public static void main(String[] args) {
         // 明示ドライバロード（新しめの環境は省略可だが、互換のため残す）
         try {
